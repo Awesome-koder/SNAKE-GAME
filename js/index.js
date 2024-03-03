@@ -1,3 +1,7 @@
+if (window.innerWidth < 1024) {
+    alert('Please, visit from desktop!');
+}
+
 // Game Constants & Variables
 let inputDir = {x: 0, y: 0}; 
 const foodSound = new Audio('music/food.mp3');
