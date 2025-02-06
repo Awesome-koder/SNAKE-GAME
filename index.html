@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,31 +14,5 @@
         <button id="pauseButton">Pause</button>
     </div>
 </body>
-<script>
-    let gamePaused = false;
-    let gameStarted = false;
-    let direction = {x: 0, y: 0};
-    
-    document.addEventListener("keydown", (event) => {
-        if (!gameStarted && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
-            gameStarted = true;
-        }
-        if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key) && !gamePaused) {
-            switch (event.key) {
-                case "ArrowUp": direction = {x: 0, y: -1}; break;
-                case "ArrowDown": direction = {x: 0, y: 1}; break;
-                case "ArrowLeft": direction = {x: -1, y: 0}; break;
-                case "ArrowRight": direction = {x: 1, y: 0}; break;
-            }
-        }
-        if (event.key === " ") { // Space bar to pause/resume
-            gamePaused = !gamePaused;
-        }
-    });
-    
-    document.getElementById("pauseButton").addEventListener("click", () => {
-        gamePaused = !gamePaused;
-    });
-</script>
 <script src="js/index.js"></script>
 </html>
