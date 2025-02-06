@@ -168,3 +168,30 @@ window.addEventListener('keydown', e =>{
     }
     
 });
+
+
+let gamePaused = false;
+let gameStarted = false;
+let inputDir = { x: 0, y: 0 };
+
+document.addEventListener("keydown", (event) => {
+    if (!gameStarted && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+        gameStarted = true;
+    }
+    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key) && !gamePaused) {
+        switch (event.key) {
+            case "ArrowUp": inputDir = { x: 0, y: -1 }; break;
+            case "ArrowDown": inputDir = { x: 0, y: 1 }; break;
+            case "ArrowLeft": inputDir = { x: -1, y: 0 }; break;
+            case "ArrowRight": inputDir = { x: 1, y: 0 }; break;
+        }
+    }
+    if (event.key === " ") { // Space bar to pause/resume
+        gamePaused = !gamePaused;
+    }
+});
+
+document.getElementById("pauseButton").addEventListener("click", () => {
+    gamePaused = !gamePaused;
+});
+
