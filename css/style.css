@@ -1,124 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
-*{
+* {
     padding: 0;
     margin: 0;
 }
-.body{
-    background: url("../img/bg3.jpg"); 
+
+.body {
+    background: url("../img/bg3.jpg");
     min-height: 100vh;
     background-size: 100vw 100vh;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-#scoreBox{
+#scoreBox {
     position: absolute;
     top: 9px;
     right: 200px;
     font-size: 39px;
     font-weight: bold;
     font-family: 'New Tegomin', serif;
+    color: white;
 }
 
-#hiscoreBox{
+#hiscoreBox {
     position: absolute;
     top: 59px;
     right: 140px;
     font-size: 39px;
     font-weight: bold;
     font-family: 'New Tegomin', serif;
+    color: white;
 }
 
-#board{
-    background: radial-gradient(rgb(114, 202, 114),rgb(223, 223, 150));
+#board {
+    background: radial-gradient(rgb(114, 202, 114), rgb(223, 223, 150));
     width: 90vmin;
     height: 92vmin;
     border: 10px solid black;
     display: grid;
     grid-template-rows: repeat(18, 1fr);
-    grid-template-columns: repeat(18, 1fr);   
-}
-
-.head{
-    background:url("../img/shead.png");
-    background-repeat: no-repeat;
-    border-radius: 15px;
- 
-}
-.snake{
-    background: url("../img/sbody1.jpeg");
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    
-    
-}
-.food{
-    background: url("../img/sfood.png");
-    background-repeat: no-repeat;
-}
-#pauseButton {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-#pauseButton:hover {
-    background-color: #45a049;
-}
-.body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #2c3e50;
-}
-
-#board {
-    width: 90vmin;
-    height: 90vmin;
-    border: 2px solid white;
-    display: grid;
-    grid-template-rows: repeat(18, 1fr);
     grid-template-columns: repeat(18, 1fr);
 }
 
-.snake {
-    background-color: #2ecc71;
-    border: .25vmin solid #27ae60;
-    border-radius: 20%;
+.head {
+    background: url("../img/shead.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
 }
 
-.head {
-    background-color: #e74c3c;
-    border: .25vmin solid #c0392b;
-    border-radius: 25%;
+.snake {
+    background: url("../img/sbody1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
 }
 
 .food {
-    background-color: #f1c40f;
-    border: .25vmin solid #f39c12;
-    border-radius: 50%;
-}
-
-#scoreBox, #hiscoreBox {
-    font-size: 2rem;
-    color: white;
-    margin: 10px 0;
+    background: url("../img/sfood.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #pauseButton {
-    margin-top: 20px;
-    padding: 15px 30px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
     font-size: 1.2rem;
     background-color: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'New Tegomin', serif;
+    font-weight: bold;
+    z-index: 10;
+}
+
+#pauseButton:hover {
+    background-color: #2980b9;
 }
